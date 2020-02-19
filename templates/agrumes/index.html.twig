@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des derniers biens{% endblock %}
+
+{% block body %}
+
+
+    <div class="container mt-5">
+        <h2>Les derniers biens</h2>
+        <div class="row flex mt-4" style="font-weight: bold;">
+        {% for agrume in agrumes %}
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <img src="{{agrume.photo}}" alt="agrume" class="img-responsive" style="width: 100%; height: auto;">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h3 class="text-primary text-center mb-4">{{ agrume.nom }}</h3>
+                        <p style="font-size: 1.3em;">{{ agrume.latin }}</p>
+                        <p class="card-text" style="font-size: 1.2em;">{{ agrume.saison }}</p>
+                        <div class="text-center"><a href="{{ path('agrume_show', {'id': agrume.id}) }}" class="btn btn-primary">Plus d'info</a></div>
+                    </div>    
+                </div>
+            </div>
+
+
+        {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

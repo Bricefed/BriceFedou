@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Agrumes index{% endblock %}
+
+{% block body %}
+    <h1 class="mt-5 mb-4">Agrumes index</h1>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Latin</th>
+                    <th>Photo</th>
+                    <th>Origine</th>
+                    <th>Saison</th>
+                    <th>Description</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for agrume in agrumes %}
+                <tr>
+                    <td style="vertical-align: middle;">{{ agrume.id }}</td>
+                    <td style="vertical-align: middle;">{{ agrume.nom }}</td>
+                    <td style="vertical-align: middle;">{{ agrume.latin }}</td>
+                    <td style="vertical-align: middle;">{{ agrume.photo }}</td>
+                    <td style="vertical-align: middle;">{{ agrume.origine }}</td>
+                    <td style="vertical-align: middle;">{{ agrume.saison }}</td>
+                    <td style="vertical-align: middle;">...</td>
+                    <td>
+                        <a href="{{ path('agrume_show', {'id': agrume.id}) }}" class="btn btn-info mt-1 mb-1">Aperçu</a>
+                        <a href="{{ path('agrume_edit', {'id': agrume.id}) }}" class="btn btn-warning mt-1 mb-1">Modifier</a>
+                        {{ include('agrume/_delete_form.html.twig') }}
+
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="8">Pas d'agrume enregistrer</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <a href="{{ path('agrume_new') }}" class="btn btn-success">Ajouter</a>
+{% endblock %}

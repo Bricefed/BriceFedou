@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AgrumesController!{% endblock %}
+
+{% block body %}
+
+    <h1 class="text-center mt-4 mb-3">Bienvenue</h1>
+    <img src="/imgs/imageDeFond.jpg" alt="Agrumes" width="100%" >
+    <div style="display: flex; justify-content: center;">
+        <p style="width: 500px;" class="mt-4 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi sit similique suscipit voluptas, vitae adipisci voluptatem atque culpa dolorem porro quibusdam voluptates beatae quaerat reiciendis error exercitationem ratione laboriosam itaque? Harum itaque cupiditate eveniet deserunt similique! Quia ratione quis libero sit illo? Neque nihil alias, et dolores esse unde doloribus?</p>
+    </div>
+    <div style="text-align: center;" class="mt-4 mb-4"><a href="{{ path ('agrumes') }}" class="btn btn-primary">Voir des agrumes</a></div>
+
+{% endblock %}

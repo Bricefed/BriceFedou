@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css">
+        <title>{% block title %}Bienvenue !{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/agrumes">Agrumes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/agrume">Espace Admin</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
